@@ -1,0 +1,11 @@
+project: savantenvs/RVVM
+target: fuzz-mmio-devices
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-mmio-devices/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_mmio_devices
+    libfuzzer: true
+    timeout: 5

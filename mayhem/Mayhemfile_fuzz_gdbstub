@@ -1,0 +1,11 @@
+project: savantenvs/RVVM
+target: fuzz-gdbstub
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-gdbstub/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_gdbstub
+    libfuzzer: true
+    timeout: 5

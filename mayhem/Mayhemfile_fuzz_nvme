@@ -1,0 +1,11 @@
+project: savantenvs/RVVM
+target: fuzz-nvme
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-nvme/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_nvme
+    libfuzzer: true
+    timeout: 5

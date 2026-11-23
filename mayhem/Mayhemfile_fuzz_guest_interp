@@ -1,0 +1,11 @@
+project: savantenvs/RVVM
+target: fuzz-guest-interp
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-guest-interp/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_guest_interp
+    libfuzzer: true
+    timeout: 5
